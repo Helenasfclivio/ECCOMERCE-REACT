@@ -1,0 +1,106 @@
+
+h1{
+  font-size: 1.5em;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: rgb(255, 255, 255);
+  color: rgb(90, 24,79);
+  font-weight: lighter;
+  border: 1px solid rgb(90, 24,79);
+}
+span{
+  margin-top: 1em;
+}
+
+.botoncarrito{
+  float: right;
+  margin-top: 3em;
+  margin-right: 2em;
+}
+
+.LOGO{
+float: left;
+display: inline-block;
+margin-left: 2sem;
+}
+
+.watermelon{  
+  display: inline;
+  height: 470px;
+    width: 340px;
+    float: left;
+    margin: 1em;
+}
+
+.men{
+  width: 97%;
+  display: inline-block;
+  margin-top: 1em;
+  margin-left: 1em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  border: 1px solid gray;
+}
+
+button {
+  color: rgb(68, 63, 63);
+  border: 1px solid rgb(72, 75, 83);
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  padding: 0.3em;
+  border-radius: 2em;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.menu-horizontal{
+	list-style: none;
+	display: inline-block;
+}
+.menu-horizontal > li > a{
+	display: block;
+  margin-left: 0em;
+	padding-left: 1em;
+  padding-right: 1em;
+ margin-top: 2em;
+ margin-left: 2em;
+	color: rgb(71, 68, 68);
+	text-decoration: none;
+}
+.menu-horizontal > li:hover{
+	background-color: rgb(255, 255, 255);
+  color: rosybrown;
+ 
+}
+.menu-vertical{
+	position: absolute;
+	display: none;
+	list-style: none;
+	width: 150px;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+.menu-horizontal li:hover .menu-vertical{
+display: block;
+border: 1px solid gray;
+background-color: rgb(255, 255, 255);
+font-size: medium;
+}
+.menu-vertical li:hover{
+	background-color: rgb(255, 255, 255);
+  margin-left: 0em;
+}
+
+.menu-vertical li a{
+	display: block;
+	color: white;
+	text-decoration: none;
+}
