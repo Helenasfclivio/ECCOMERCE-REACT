@@ -1,33 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { useEffect, useState } from 'react'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { ItemListContainer } from './itemListContainer/ItemListcontainer'
+import ItemDetail from './itemListContainer/itemDetailcontainer/itemDetailContainer'
 import './App.css'
-
-
-function hov (){
-
-  return (
-    <div>
-
-      <p>LOVE YOUR SKIN</p>
-    </div>
-  )
-}
 
 function App() {
   const [count, setCount] = useState(0)
-
   return (
-    
-  
-    <div className="App">
+<div className="App">
       <div className='men'>
     
 
 <img src="Free_Sample_By_Wix22222.jpg" className='LOGO' alt="" />
-        <ul class="menu-horizontal">
+        <ul className="menu-horizontal">
       <li>
         <a className='productos' href="#">P R O D U C T O S </a>
-        <ul class="menu-vertical">
+        <ul className="menu-vertical">
             <li><button>CREMAS HIDRATANTES</button></li>
             <li><button>MANTECAS CORPORALES</button> </li>
             <li> <button>EXFOLIANTES</button></li>
@@ -37,30 +25,21 @@ function App() {
     </li>
 
     </ul>
-    <button onClick={() => setCount((count) => count + 1)}className='botoncarrito'>
+    <button >
     <img src="bolso.png" alt="" />{count}
   </button>
       </div>
-     
+<BrowserRouter>
+               
+                    <div>
+                        <Routes>
+                            <Route  path='/' element={ <ItemListContainer saludo='soy ItemList Container' /> } />
+                            <Route  path='/categoria/:idCategoria' element={ <ItemListContainer saludo='soy ItemList Container' /> } />
+                            <Route  path='/detalle/:idProducto' element={ <ItemDetail /> } />
 
-
-      <div className="card">
-
-<img src="purple.jpg" alt="" className='watermelon' onMouseMove={hov} />
-<img src="rosy.jpg" alt=""  className='watermelon'/>
-<img src="bodyscrub.jpg" alt="" className='watermelon' />
-
-       
-      </div>
-      <p className="read-the-docs">
-      </p>
-    </div>
-  )
-}
-
-export default App
-
-const productos = [
-{nombre:'',precio:'',color:''}
-
-]
+                            <Route path='*' element={ <Navigate to='/' /> } />
+                        </Routes>
+                    </div>
+            </BrowserRouter>
+            </div>
+)}export default App

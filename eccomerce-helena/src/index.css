@@ -17,11 +17,7 @@ span{
   margin-right: 2em;
 }
 
-.LOGO{
-float: left;
-display: inline-block;
-margin-left: 2sem;
-}
+
 
 .watermelon{  
   display: inline;
@@ -32,10 +28,10 @@ margin-left: 2sem;
 }
 
 .men{
-  width: 97%;
+  width: 95%;
   display: inline-block;
   margin-top: 1em;
-  margin-left: 1em;
+  margin-left: 2em;
   padding-top: 1em;
   padding-bottom: 1em;
   padding-left: 1em;
@@ -103,4 +99,36 @@ font-size: medium;
 	display: block;
 	color: white;
 	text-decoration: none;
+}
+.bikini{
+  display:inline-block;
+  background-color: rgb(167, 82, 145);
+  height: 440px;
+  width: 270px;
+  border: 1px solid gray ;
+  margin-right: 1em;
+  margin-left: 2em;
+  background-color: rgb(255, 255, 255);
+  padding-bottom: 2em;
+  border-radius: 4px;
+  margin-top: 1em;
+  
+
+}
+
+.imaa{
+  height: 80%;
+  width: 100%;
+}
+
+.NOMBRE{
+text-align: center;
+padding-top: 2em;
+margin-bottom: 0.5em;
+text-decoration:none;
+color: gray;
+}
+
+link{
+  text-decoration: none;
 }
