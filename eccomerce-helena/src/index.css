@@ -41,7 +41,7 @@ span{
 button {
   color: rgb(68, 63, 63);
   border: 1px solid rgb(72, 75, 83);
-  font-size: 1em;
+margin-left: 7em;  font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   background-color: #ffffff;

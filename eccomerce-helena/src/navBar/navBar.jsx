@@ -1,49 +1,28 @@
+import React from "react";
+import { Link} from 'react-router-dom'
+import { ItemListContainer } from "../itemListContainer/ItemListcontainer";
 
-/*
+const Navbar = () =>
+{
+  return (
 
-import { Link, NavLink } from 'react-router-dom';
+    <div className="men">
+<img src="Free_Sample_By_Wix22222.jpg" className='LOGO' alt="" />
+<Link to={'/'}>INICIO</Link>
 
-const NavBar = () => {
-    return (
-        <div className="App">
-        <div className='men'>
-      
-  
-  <img src="Free_Sample_By_Wix22222.jpg" className='LOGO' alt="" />
-          <ul class="menu-horizontal">
-        <li>
-          <a className='productos' href="#">P R O D U C T O S </a>
-          <ul class="menu-vertical">
-              <li><button>CREMAS HIDRATANTES</button></li>
-              <li><button>MANTECAS CORPORALES</button> </li>
-              <li> <button>EXFOLIANTES</button></li>
-              <li> <button>JABONES</button></li>
-              <li><button>ACCESORIOS</button></li>
-          </ ul>
-      </li>
-  
-      </ul>
-      <button >
-      <img src="bolso.png" alt="" />
-    </button>
-        </div>
-       
-  
-  
-        <div className="card">
-  
-  <img src="purple.jpg" alt="" className='watermelon' onMouseMove={hov} />
-  <img src="rosy.jpg" alt=""  className='watermelon'/>
-  <img src="bodyscrub.jpg" alt="" className='watermelon' />
-  
-         
-        </div>
-        <p className="read-the-docs">
-        </p>
-      </div>
+<Link to={'/categoria/mantecas'}><button>MANTECAS CORPORALES</button></Link>
+<Link to={'/categoria/exfoliante'}><button>EXFOLIANTES</button> </Link>
 
-    )
+
+        
+    <button >
+    <img src="bolso.png" alt="" />
+  </button>
+
+
+<Link to={'/cart'}></Link>
+    </div>
+  )
 }
 
-export default NavBar
-*/
+export default Navbar
