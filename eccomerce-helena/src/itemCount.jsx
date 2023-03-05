@@ -1,7 +1,7 @@
 import React from "react"
 import { useState } from "react"
 
-const ItemCount = ({initial=1, stock=10, onAdd}) => {
+ export const ItemCount = ({initial=1, stock=10, onAdd}) => {
     const [ count, setCount] = useState(initial)
 
     const handleSuma = () =>{
@@ -47,4 +47,3 @@ const ItemCount = ({initial=1, stock=10, onAdd}) => {
   )
 }
 
-export default ItemCount

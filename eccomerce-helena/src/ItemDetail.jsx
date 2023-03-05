@@ -21,7 +21,7 @@ const Componente = ()=> {
 
 
 
-const ItemDetail = ({ producto }) => {
+ export const ItemDetail = ({ producto }) => {
     const [isCount, setIsCount] = useState(true)
     const [cart, setCart] = useState(false)
 
@@ -68,9 +68,7 @@ const ItemDetail = ({ producto }) => {
                     }
                 </div>
             </div>
-            {/* <ItemCount onAdd={onAdd} initial={1} stock={10} /> */}
         </div>
     )
 }
 
-export default ItemDetail

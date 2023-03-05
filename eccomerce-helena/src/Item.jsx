@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
     return (
       <div className='card w-25 mt-2' >
                     <Link to={`/detalle/${producto.id}`}>
-                      <div className='card-header'>
+                      <div >
                         Nombre: {producto.name}
                       </div>
                       <div >
@@ -23,4 +23,3 @@ import { Link } from "react-router-dom"
   }
 
 )
-

@@ -3,7 +3,7 @@ import {Item} from "./Item"
 
 
 
-const ItemList = memo(  ( { productos } ) => {
+ export const ItemList = memo(  ( { productos } ) => {
         console.log('Render ItemList')
         return (
             productos.map(producto =>   <Item key={producto.id}   producto={producto}/> )
@@ -11,4 +11,3 @@ const ItemList = memo(  ( { productos } ) => {
     }
 )
 
-export default ItemList
