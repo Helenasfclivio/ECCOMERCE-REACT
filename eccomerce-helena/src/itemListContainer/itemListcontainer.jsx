@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
-import { fetchProductos } from "../fetch/fetchProductos"
+import { collection,getDocs, getFirestore, query, where } from 'firebase/firestore'
+
 
 
 export const ItemListContainer = ({ saludo }) => {
@@ -9,63 +10,40 @@ export const ItemListContainer = ({ saludo }) => {
 
   const { idCategoria } = useParams()
 
-  useEffect(()=>{
-    if (idCategoria) {
-      fetchProductos()
-        .then(res => {      
-          setProductos(res.filter(producto => producto.categoria === idCategoria))
-        })
-        .catch(error => console.log(error))
-        .finally(()=> setLoading(false))      
-    } else {
-      fetchProductos()
-        .then(res => {      
-          setProductos(res)
-        })
-        .catch(error => console.log(error))
-        .finally(()=> setLoading(false))
+      console.log(import.meta.env.VITE_NOMBRE)
+    useEffect(()=>{
+      setLoading(true)
+      const db = getFirestore() 
+      const queryCollections = collection(db, 'item')
+  
+      const queryFilter = idCategoria ? query(queryCollections, where('categoria','==', idCategoria) ) : queryCollections    
       
-    }
-  }, [idCategoria])
-
- 
-
-
-  console.log(idCategoria)
-
-  return (
+      getDocs(queryFilter)
+      .then(resp => setProductos( resp.docs.map(product => ({ id: product.id, ...product.data() } ) )))
+      .catch(err => console.error(err))
+      .finally(() => setLoading(false))    
+    }, [idCategoria])
+  
     
-         loading 
-          ? 
-            <h2>cargando productos...</h2> 
-          : 
-          <div style={{
-            display: 'flex',
-            flexDirection: 'row',
-            flexWrap: 'wrap'
-          }} >
-           { productos.map(producto =>   (
-                <div key={producto.id} className='bikini' >
-                  
-                    <div className='NOMBRE'>
-                       {producto.name}
-                    </div>
-                    <div className='NOMBRE'>
-                      <img src={producto.foto} alt='foto' className="imaa"/>
-                      categoria:{producto.categoria}<br/>
-                    ${producto.price}
-                    </div>
-                    <div className='card-footer'>
-                    <Link to={`/detalle/${producto.id}`}> <button>Detalle</button>  </Link>
-                    </div>
-               
+    return (
+          
+              loading 
+              ? 
+                  <Loading />
+              : 
+                  <>                      
+                      <div style={{
+                          display: 'flex',
+                          flexDirection: 'row',
+                          flexWrap: 'wrap'
+                      }} >
+  
+                          <ItemList productos={productos} />                    
+                      </div>
+                  </>
+    )
+  }
+  
 
-                </div>
-              )
-            )}
 
-            
-          </div>
-
-  )
-}
+  

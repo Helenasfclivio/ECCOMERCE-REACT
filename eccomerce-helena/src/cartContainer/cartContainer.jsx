@@ -1,8 +1,13 @@
-const CartContainer = () => {
-    return (
-      <div>CartContainer</div>
-    )
-  }
-  
-  export default CartContainer
-  
+import React from 'react'
+import { fetchProductos } from '../fetch/fetchproductos'
+
+export const  CartContainer = () => {
+  return (
+    <div>
+      Hola soy Cartecontainer
+    </div>
+  )
+}
+
+
+ 

@@ -8,11 +8,11 @@ const Navbar = () =>
 
     <div className="men">
 <img src="Free_Sample_By_Wix22222.jpg" className='LOGO' alt="" />
-<Link to={'/'}>INICIO</Link>
 
-<Link to={'/categoria/mantecas'}><button>MANTECAS CORPORALES</button></Link>
-<Link to={'/categoria/exfoliante'}><button>EXFOLIANTES</button> </Link>
-
+<Link to={'/categoria/mantecas'} className= 'home'>MANTECAS CORPORALES</Link>
+<Link to={'/categoria/exfoliante'} className='home'>EXFOLIANTES </Link>
+<Link to={'/cart'}>CARRITO</Link>
+ 
 
         
     <button >
@@ -20,7 +20,6 @@ const Navbar = () =>
   </button>
 
 
-<Link to={'/cart'}></Link>
     </div>
   )
 }
